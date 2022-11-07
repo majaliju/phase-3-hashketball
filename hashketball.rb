@@ -1,4 +1,6 @@
 # Write your code below game_hash
+require "pry"
+
 def game_hash
   {
     home: {
@@ -127,3 +129,12 @@ def game_hash
 end
 
 # Write code here
+def num_points_scored(player_name)
+  game_hash.each do |team, team_data|
+    team_data.each do |team_detail_category, team_info|
+      team_info.each do |stats,|
+          data_item == player_name
+      end
+    end
+  end
+end
