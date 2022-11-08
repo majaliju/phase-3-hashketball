@@ -134,10 +134,39 @@ def all_players
   game_hash[:home][:players] + game_hash[:away][:players]
 end
 
-
-def num_points_scored(player_name)
-  ## work this one out 
-  all_players.find{|player| player_name}
+def get_player(name)
+  all_players.find{|player| player[:player_name] == name}
 end
 
-binding.pry
+
+def num_points_scored(name)
+  get_player(name)[:points]
+end
+
+def shoe_size(name)
+  get_player(name)[:shoe]
+end
+
+def get_team_by_name(name)
+  game_hash[:home][:team_name] == name ? game_hash[:home] : game_hash[:away]
+end
+def team_colors(team_name)
+  get_team_by_name(team_name)[:colors]
+end
+
+def team_names
+  [game_hash[:home][:team_name], game_hash[:away][:team_name]]
+end
+
+def player_numbers(team_name)
+  get_team_by_name(team_name)[:players].map{|player| player[:number]}
+end
+
+def player_stats(name)
+  get_player(name)
+end
+
+def big_shoe_rebounds
+ all_players.max_by{|player| player[:shoe]}[:rebounds]
+
+end
