@@ -128,13 +128,18 @@ def game_hash
   }
 end
 
-# Write code here
+## followed some guidance from the Hashketball lab by Princeton Rose
+## kept running into walls with nested iterations, helped me clean my methods up and be optimal 
+def all_players
+  game_hash[:home][:players] + game_hash[:away][:players]
+end
+
+
 def num_points_scored(player_name)
-  game_hash.each do |team, team_data|
-    team_data.each do |team_detail_category, team_info|
-      team_info.each do |stats,|
-          data_item == player_name
+
       end
     end
   end
 end
+
+binding.pry
