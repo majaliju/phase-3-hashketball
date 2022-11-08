@@ -136,10 +136,8 @@ end
 
 
 def num_points_scored(player_name)
-
-      end
-    end
-  end
+  ## work this one out 
+  all_players.find{|player| player_name}
 end
 
 binding.pry
